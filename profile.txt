@@ -4,24 +4,17 @@
 # Lines starting with # are comments and are ignored.
 # ============================================================
 
-name=Prof. Pin Luarn
+name=Greta Maria Reutter
 
-title1=Top 2% Scientist Worldwide (2020-2026)
+expertise=Digital Marketing, AI Applications
 
-title2=2024 National Teaching Award Laureate
+education=M.S Marketing Intelligence
 
-expertise=Internet Marketing, AI Applications, Agentic AI
+email=reutterg@hs-pforzheim.de
+linkedin=https://de.linkedin.com/in/greta-maria-reutter-77b683264 
 
-education=Ph.D. in Industrial Engineering, University of Wisconsin-Madison, USA
+about1=Greta Maria earned her B.S. in Business Administration – Media Management and Advertising Psychology from Pforzheim University.
 
-email=luarn@mail.ntust.edu.tw
-linkedin=https://pse.is/8nn88y 
+phone=+49176 47003306
 
-about1=Prof. Luarn earned his B.S. in Industrial Engineering from Tunghai University,
-about2=and his M.S. and Ph.D. in Industrial Engineering from the University of Wisconsin-Madison.
-about3=Named among the world's top 2% scientists by Stanford University & Elsevier for seven consecutive years (2020-2026).
-about4=Recipient of the 2024 Presidential National Teaching Award, Taiwan
-
-phone=+886-2-2737-6754
-
-location=T2-409, National Taiwan University of Science and Technology, No. 43, Sec. 4, Keelung Rd., Taipei, Taiwan
+location=Pforzheim University, Tiefenbronner Str. 65, 75175 Pforzheim
