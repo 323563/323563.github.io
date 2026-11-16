@@ -6,7 +6,7 @@
 
 name=Greta Maria Reutter
 
-title 1= Pforzheim University
+title1= Pforzheim University
 
 title2= Working Student – B2B Marketing @ EnBW mobility+
 
