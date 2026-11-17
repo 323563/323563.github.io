@@ -18,6 +18,9 @@ email=reutterg@hs-pforzheim.de
 linkedin=https://de.linkedin.com/in/greta-maria-reutter-77b683264 
 
 about1=Greta Maria earned her B.S. in Business Administration – Media Management and Advertising Psychology from Pforzheim University.
+about2=
+about3=
+about4= 
 
 phone=+49176 47003306
 
