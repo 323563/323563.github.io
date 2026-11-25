@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1b1f3a">
   <title>Dream Drift · by Greta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;900&family=Outfit:wght@500;700;800&family=Fredoka:wght@600;700&family=Pacifico&family=Allison&display=swap">
-  <script type="module" crossorigin src="./assets/index-DL30DQ3c.js"></script>
+  <script type="module" crossorigin src="./assets/index-CCQ83rL4.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/models-gX9MvB7A.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-Guum0OEn.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-BUlrBGQo.css">
 </head>
 <body>
   <canvas id="c"></canvas>
+  <div id="rotate" hidden><div><span>📱↻</span><b>Please turn your phone sideways</b><small>Dream Drift is played in landscape.</small></div></div>
   <div id="hud">
     <div id="menu" hidden>
       <header><div id="logo" aria-label="Dream Drift by Greta"><div class="word"><span style="--i:0">D</span><span style="--i:1">r</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">m</span></div><div class="word w2"><span style="--i:5">D</span><span style="--i:6">r</span><span style="--i:7">i</span><span style="--i:8">f</span><span style="--i:9">t</span><svg class="spark" viewBox="0 0 24 24"><path d="M12 0l2.6 8.6L24 12l-9.4 3.4L12 24l-2.6-8.6L0 12l9.4-3.4z"/></svg></div><div class="by"><span>by Greta</span></div></div><div id="m-worlds"></div><div id="m-building" hidden></div></header>
@@ -27,6 +31,15 @@
     <div id="lap">Lap <b>1</b>/2</div>
     <div id="warp" hidden></div>
     <div id="pip" hidden><span id="pip-label">☄️ Comet cam</span></div>
+    <!-- Nur auf Handy/Tablet: Touch-Knöpfe -->
+    <div id="touch" hidden>
+      <div class="tl"><button data-t="left" type="button" aria-label="Steer left">◀</button><button data-t="right" type="button" aria-label="Steer right">▶</button></div>
+      <div class="tr">
+        <button data-t="jump" type="button" class="small"><span>⬆</span><small>Jump</small></button>
+        <button data-t="boost" type="button" class="big"><span>🔥</span><small>Boost</small></button>
+        <button data-t="brake" type="button" class="small"><span>■</span><small>Brake</small></button>
+      </div>
+    </div>
     <div id="time">0:00.00</div>
     <canvas id="minimap"></canvas>
     <div id="flash"></div>
@@ -72,6 +85,19 @@
         </div>
         <div id="intro-status"></div>
         <p class="privacy">🔒 Everything runs on this computer. No video leaves the browser.</p>
+      </div>
+      <div class="card" id="intro-touch" hidden>
+        <div class="badge">Touch controls</div>
+        <h2>Race with your fingers</h2>
+        <p class="lead">Speed is automatic. Hold your phone sideways and use the buttons on the screen.</p>
+        <div class="keys">
+          <div class="k"><span><kbd>◀</kbd><kbd>▶</kbd></span><b>Steer</b><em>left thumb</em></div>
+          <div class="k"><span><kbd>🔥</kbd></span><b>Boost</b><em>when the meter is full</em></div>
+          <div class="k"><span><kbd>⬆</kbd></span><b>Jump</b><em>over crates</em></div>
+          <div class="k"><span><kbd>■</kbd></span><b>Brake</b><em>before sharp turns</em></div>
+        </div>
+        <p class="tip">Tap a character, a vehicle and a track, then “Let’s go!”. The pause button is at the top left.</p>
+        <div class="actions"><button id="touch-go" type="button">Got it, let's race!</button></div>
       </div>
       <div class="card" id="intro-keys" hidden>
         <div class="badge">Keyboard</div>
