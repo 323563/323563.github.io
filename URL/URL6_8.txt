@@ -1,2 +1,2 @@
-Extra Credit Challenge - Manus CUE!: Generate a video from a text prompt.
+Extra Credit Challenge: Manus CUE!
 https://323563.github.io/flying_swordsman.MP4
