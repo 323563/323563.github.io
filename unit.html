@@ -294,6 +294,11 @@
             margin-bottom: 0.5rem;
         }
 
+        .extra-description {
+            white-space: pre-line;
+            margin-top: 0.75rem;
+        }
+
         .demo-link {
             display: inline-flex;
             align-items: center;
@@ -720,17 +725,19 @@
         // Read URL{N}_{i}.txt (if present)
         // Line 1: replaces the unit name normally shown under the image
         // Line 2 (optional): a demo URL, shown on the next line as a clickable link
+        // Remaining lines: additional description
         function loadImageNote(unitNum, index) {
-            return fetch(`URL/URL${unitNum}_${index}.txt`)
+            return fetch(`URL/URL${unitNum}_${index}.txt`, { cache: 'no-store' })
                 .then(response => {
                     if (!response.ok) throw new Error("No note file.");
                     return response.text();
                 })
                 .then(text => {
-                    const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                    const lines = text.split(/\r?\n/).map(l => l.trim());
                     const note = {};
                     if (lines[0]) note.caption = lines[0];
                     if (lines[1]) note.demoUrl = lines[1];
+                    note.extraDescription = lines.slice(2).join('\n').trim();
                     return note;
                 })
                 .catch(() => null);
@@ -796,8 +803,15 @@
                 if (note) {
                     if (note.caption) image.caption = note.caption;
                     if (note.demoUrl) image.demoUrl = note.demoUrl;
+                    if (note.extraDescription) image.extraDescription = note.extraDescription;
                 }
             }));
+        }
+
+        function escapeHtml(text) {
+            const element = document.createElement('span');
+            element.textContent = text;
+            return element.innerHTML;
         }
 
         // Render gallery based on current unit
@@ -819,8 +833,9 @@
                         <img src="${image.src}" alt="Unit ${currentUnit} - Image ${index + 1}">
                         <div class="gallery-overlay">
                             <h5>${fileName}</h5>
-                            <p>${captionText}</p>
+                            <p>${escapeHtml(captionText)}</p>
                             ${demoLinkHtml}
+                            ${image.extraDescription ? `<p class="extra-description">${escapeHtml(image.extraDescription)}</p>` : ''}
                         </div>
                     </div>
                 `;
