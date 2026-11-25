@@ -3,3 +3,5 @@ https://323563.github.io/dream-drift/
 Dream Drift is a colorful 3D kart racer for the browser that you control with your hands. Your webcam turns your fists into an invisible steering wheel: turn to steer, open your hands to boost, lower them to brake and lift them to jump.
 Choose from eight characters and six vehicles, then race two laps against five rivals on two tracks: the beach of Sunny Bay and the pastel Cloud Kingdom above the clouds. Collect boosts and homing comets, dodge banana peels and celebrate at the finish.
 Built with Three.js and MediaPipe.
+
+A mobile version is also available for iPhone and iPad.
