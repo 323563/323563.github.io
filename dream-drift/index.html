@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dream Drift · by Greta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;900&family=Outfit:wght@500;700;800&family=Fredoka:wght@600;700&family=Pacifico&family=Allison&display=swap">
+  <script type="module" crossorigin src="./assets/index-ByTha9ka.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/models-gX9MvB7A.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-urN8upFi.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="hud">
+    <div id="menu" hidden>
+      <header><div id="logo" aria-label="Dream Drift by Greta"><div class="word"><span style="--i:0">D</span><span style="--i:1">r</span><span style="--i:2">e</span><span style="--i:3">a</span><span style="--i:4">m</span></div><div class="word w2"><span style="--i:5">D</span><span style="--i:6">r</span><span style="--i:7">i</span><span style="--i:8">f</span><span style="--i:9">t</span><svg class="spark" viewBox="0 0 24 24"><path d="M12 0l2.6 8.6L24 12l-9.4 3.4L12 24l-2.6-8.6L0 12l9.4-3.4z"/></svg></div><div class="by"><span>by Greta</span></div></div><div id="m-worlds"></div><div id="m-building" hidden></div></header>
+      <section class="m-col m-left"><h2><em>1</em> Character</h2><div id="m-chars"></div></section>
+      <section class="m-col m-right"><h2><em>2</em> Vehicle</h2><div id="m-karts"></div></section>
+      <div class="m-bottom">
+        <div id="m-who"></div><div id="m-tag"></div>
+        <button id="m-start" data-pick="start" type="button">Let's go!</button>
+      </div>
+    </div>
+    <div id="place"><label>Pos</label><b>6</b><span>/6</span></div>
+    <div id="time">0:00.00</div>
+    <canvas id="minimap"></canvas>
+    <div id="flash"></div>
+    <div id="count"></div>
+    <div id="finish"></div>
+    <div id="speedo"><div id="speed">0</div><span>km/h</span><div id="meter"><i></i></div><label>Boost</label></div>
+    <button id="pm-btn" type="button" aria-label="Pause"><span class="ic"><i></i><i></i></span>Pause<kbd>Esc</kbd></button>
+    <div id="pm-tip" hidden>Pause anytime here</div>
+    <button id="music-btn" type="button" aria-label="Music on or off">🔊</button>
+    <div id="pmenu" hidden>
+      <div class="pcard">
+        <div class="ptitle">Paused</div>
+        <button data-pick="pm-resume" type="button"><span>▶</span>Resume</button>
+        <button data-pick="pm-restart" type="button"><span>↻</span>Restart race</button>
+        <button data-pick="pm-controls" type="button"><span>🎮</span>Controls</button>
+        <button data-pick="pm-music" type="button" id="pm-music"><span>🔊</span>Music: On</button>
+        <button data-pick="pm-main" type="button"><span>⌂</span>Quit to main menu</button>
+      </div>
+    </div>
+    <button id="gest-btn" type="button">🎥 Start gesture control <small>Key C</small></button>
+    <div id="gest-msg" hidden></div>
+    <div id="gest" hidden><canvas></canvas><span id="gest-tag"></span><div class="lbl"><i id="gest-dot"></i><span id="gest-label"></span></div></div>
+    <div id="gest-chip" hidden><span id="gest-ring"><span id="gest-ico"></span></span><span id="gest-ctext"></span></div>
+    <div id="calib" hidden><strong>Fists up like on a steering wheel</strong><span>Hold the wheel straight for one second</span><div class="bar"><i></i></div></div>
+    <div id="pause" hidden><strong></strong><span></span></div>
+    <div id="cursor" hidden><i></i></div>
+    <div id="intro" hidden>
+      <div class="card" id="intro-gest">
+        <div class="badge">Gesture control</div>
+        <h2>Race with your hands</h2>
+        <p class="lead">Your webcam turns your hands into the controller. Sit about an arm's length away, with both hands visible.</p>
+        <div class="moves">
+          <div class="mv"><span class="ic">🛞</span><b>Steer</b><span>Hold an invisible wheel with both fists and turn it</span></div>
+          <div class="mv"><span class="ic">🖐️</span><b>Boost</b><span>Open both hands, even while you steer</span></div>
+          <div class="mv"><span class="ic">👇</span><b>Brake</b><span>Lower both fists toward your lap</span></div>
+          <div class="mv"><span class="ic">🙌</span><b>Jump</b><span>Lift both fists up a hand’s width</span></div>
+          <div class="mv"><span class="ic">🙈</span><b>Pause</b><span>Take your hands out of view</span></div>
+        </div>
+        <p class="tip">In the menu, point with your finger and pinch (or hover for a moment) to pick. Smile big and your racer cheers!</p>
+        <div class="actions">
+          <button id="intro-go" type="button">📷 Turn on camera</button>
+          <button id="intro-skip" type="button">Play with keyboard</button>
+        </div>
+        <div id="intro-status"></div>
+        <p class="privacy">🔒 Everything runs on this computer. No video leaves the browser.</p>
+      </div>
+      <div class="card" id="intro-keys" hidden>
+        <div class="badge">Keyboard</div>
+        <h2>Race with your keyboard</h2>
+        <p class="lead">Speed is automatic. You just steer, brake, jump and boost.</p>
+        <div class="keys">
+          <div class="k"><span><kbd>←</kbd><kbd>→</kbd></span><b>Steer</b></div>
+          <div class="k"><span><kbd>↓</kbd></span><b>Brake</b></div>
+          <div class="k"><span><kbd class="wide">Space</kbd></span><b>Jump</b></div>
+          <div class="k"><span><kbd class="wide">Shift</kbd></span><b>Boost</b></div>
+          <div class="k"><span><kbd>R</kbd></span><b>Restart</b></div>
+          <div class="k"><span><kbd>M</kbd></span><b>Menu</b></div>
+        </div>
+        <p class="tip">In the menu: <kbd class="sm">←</kbd><kbd class="sm">→</kbd> character · <kbd class="sm">↑</kbd><kbd class="sm">↓</kbd> vehicle · <kbd class="sm">Tab</kbd> track · <kbd class="sm">Enter</kbd> start. Press <kbd class="sm">C</kbd> anytime to switch to gestures.</p>
+        <div class="actions"><button id="keys-go" type="button">Got it, let's race!</button></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
